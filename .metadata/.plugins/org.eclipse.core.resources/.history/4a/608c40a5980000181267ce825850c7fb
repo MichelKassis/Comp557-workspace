@@ -12,10 +12,8 @@ public class HingeJoint extends DAGNode {
 	DoubleParameter rz;
 	
 	
-	public HingeJoint(String name, double tx, double ty, double tz) {
+	public HingeJoint(String name) {
 		super(name);
-		
-		
 		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
 		dofs.add( ry = new DoubleParameter( name+" ry", 0, -180, 180 ) );
 		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
