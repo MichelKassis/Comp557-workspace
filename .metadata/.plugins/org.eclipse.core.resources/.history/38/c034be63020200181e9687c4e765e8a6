@@ -1,0 +1,35 @@
+package comp557.a1;
+
+import javax.vecmath.Vector3d;
+
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLAutoDrawable;
+
+public class Cube extends DAGNode {
+	
+	Vector3d scale;
+	Vector3d rotate;
+	Vector3d translation;
+
+	
+	public Cube(String name){
+		super(name);
+		
+		
+	}
+	
+	@Override
+	public void display(GLAutoDrawable drawable) {
+		GL2 gl = drawable.getGL().getGL2();
+		
+		gl.glPushMatrix();
+		
+		glut.glutWireTeapot(1);
+		
+		super.display(drawable);
+		
+		gl.glPopMatrix();
+	
+	}
+	
+}

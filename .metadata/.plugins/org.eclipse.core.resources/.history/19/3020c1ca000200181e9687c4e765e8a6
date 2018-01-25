@@ -1,0 +1,12 @@
+package comp557.a1;
+
+public class Cube extends DAGNode {
+
+	
+	public Cube(String name){
+		super(name);
+		
+		
+	}
+	
+}

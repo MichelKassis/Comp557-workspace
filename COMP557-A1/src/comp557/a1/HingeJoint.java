@@ -11,14 +11,20 @@ public class HingeJoint extends DAGNode {
 	DoubleParameter ry;
 	DoubleParameter rz;
 	
+	double tx;
+	double ty;
+	double tz;
 	
-	public HingeJoint(String name, double tx, double ty, double tz) {
+	
+	
+	public HingeJoint(String name, double minAngle, double maxAngle) {
 		super(name);
 		
+		dofs.add( rx = new DoubleParameter( name+" rx", 0, minAngle, maxAngle ) );		
+		dofs.add( ry = new DoubleParameter( name+" ry", 0, minAngle, maxAngle ) );
+		dofs.add( rz = new DoubleParameter( name+" rz", 0, minAngle, maxAngle ) );
 		
-		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
-		dofs.add( ry = new DoubleParameter( name+" ry", 0, -180, 180 ) );
-		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
+		
 	}
 	
 	@Override
@@ -26,6 +32,9 @@ public class HingeJoint extends DAGNode {
 		GL2 gl = drawable.getGL().getGL2();
 		
 		gl.glPushMatrix();
+		
+		gl.glTranslated(tx, ty -1, tz);
+		
 		gl.glRotated(rx.getValue(), 1, 0, 0);
 		gl.glRotated(ry.getValue(), 0, 1, 0);
 		gl.glRotated(rz.getValue(), 0, 0, 1);
