@@ -17,12 +17,12 @@ public class BallJoint extends DAGNode {
 	
 	
 	
-	public BallJoint(String name, double minAngle, double maxAngle , double tx, double ty, double tz) {
+	public BallJoint(String name, double tx, double ty, double tz, double xRotation, double yRotation, double zRotation) {
 		super(name);
 		
-		dofs.add( rx = new DoubleParameter( name+" rx", 0, minAngle, maxAngle ) );		
-		dofs.add( ry = new DoubleParameter( name+" ry", 0, minAngle, maxAngle ) );
-		dofs.add( rz = new DoubleParameter( name+" rz", 0, minAngle, maxAngle ) );
+		dofs.add( rx = new DoubleParameter( name+" rx", 0, xRotation, xRotation ) );		
+		dofs.add( ry = new DoubleParameter( name+" ry", 0, yRotation, yRotation ) );
+		dofs.add( rz = new DoubleParameter( name+" rz", 0, zRotation, zRotation ) );
 		
 		
 	}

@@ -21,15 +21,14 @@ public class HingeJoint extends DAGNode {
 	
 	
 	
-	public HingeJoint(String name, double minAngle, double maxAngle,
-			double xAxis, double yAxis, double zAxis,
-			double tx, double ty, double tz
+	public HingeJoint(String name, double xAxis, double yAxis, double zAxis,
+			double tx, double ty, double tz, double rotationAngle
 			) {
 		super(name);
 		
-		dofs.add( rx = new DoubleParameter( name+" rx", 0, minAngle, maxAngle ) );		
-		dofs.add( ry = new DoubleParameter( name+" ry", 0, minAngle, maxAngle ) );
-		dofs.add( rz = new DoubleParameter( name+" rz", 0, minAngle, maxAngle ) );
+		dofs.add( rx = new DoubleParameter( name+" rx", 0, rotationAngle, rotationAngle ) );		
+		dofs.add( ry = new DoubleParameter( name+" ry", 0, rotationAngle, rotationAngle ) );
+		dofs.add( rz = new DoubleParameter( name+" rz", 0, rotationAngle, rotationAngle ) );
 		
 		
 	}

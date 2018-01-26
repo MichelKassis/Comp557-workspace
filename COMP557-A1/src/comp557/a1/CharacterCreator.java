@@ -16,9 +16,9 @@ public class CharacterCreator {
 		// some code to create a charcter and return the root node.
 				
 		FreeJoint root = new FreeJoint("Root");
-		HingeJoint hinge = new HingeJoint("Hinge" , 0, 90, 0, 0, 0, 0, 0, 0);
-		BallJoint ball = new BallJoint("Ball" , 0, 360, 0, 0, 0) ;
-		Cube cube = new Cube( "Micho" + "Cube", name, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		HingeJoint hinge = new HingeJoint("Hinge" , 0, 90, 0, 0, 0, 0, 0);
+		BallJoint ball = new BallJoint("Ball" , 0, 360, 0, 0, 0, 0) ;
+		Cube cube = new Cube( "Micho" + "Cube", name, 0, 0, 0, 0, 0, 0, 5, 5, 5);
 		
 		
 		root.add(hinge);
