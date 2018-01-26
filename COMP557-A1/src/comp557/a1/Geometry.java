@@ -1,13 +1,13 @@
 package comp557.a1;
 
-import javax.vecmath.Vector3d;
-
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 
 import mintools.parameters.DoubleParameter;
 
-public class Cube extends DAGNode {
+public class Geometry extends DAGNode {
+	
+	private Shape shape;
 	
 	DoubleParameter tx;
 	DoubleParameter ty;
@@ -20,7 +20,7 @@ public class Cube extends DAGNode {
 	DoubleParameter sz;
 
 	
-	public Cube(String name, String shape,
+	public Geometry(String name, Shape shape,
 			double transX, double transY,double transZ, 
 			double rotateX,double rotateY,double rotateZ,
 			double scaleX, double scaleY,double scaleZ ){
@@ -40,6 +40,8 @@ public class Cube extends DAGNode {
 		dofs.add( sy = new DoubleParameter( name+" sy", scaleY, scaleY, scaleY ) );
 		dofs.add( sz = new DoubleParameter( name+" sz", scaleZ, scaleZ, scaleZ ) );
 		
+		this.shape = shape;
+		
 		
 		
 		
@@ -58,13 +60,22 @@ public class Cube extends DAGNode {
 		
 		gl.glScaled(sx.getValue(), sy.getValue(), sz.getValue());
 		
+		switch(shape) {
 		
-		glut.glutSolidCube(1);
+		case Cube:
+			glut.glutSolidCube(1);
+		case Sphere:
+			glut.glutSolidTeapot(1);
+			
+		
+		}
 		
 		super.display(drawable);
 		
 		gl.glPopMatrix();
 	
 	}
+	
+	public enum Shape {Cube,Sphere,Teapot}
 	
 }

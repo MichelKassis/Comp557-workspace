@@ -16,15 +16,28 @@ public class CharacterCreator {
 		// some code to create a charcter and return the root node.
 				
 		FreeJoint root = new FreeJoint("Root");
-		HingeJoint hinge = new HingeJoint("Hinge" , 0, 90, 0, 0, 0, 0, 0);
+		
+		HingeJoint hinge = new HingeJoint("Hinge" , 0, 90, 0, 0, 0, 0, 0, 0);
 		BallJoint ball = new BallJoint("Ball" , 0, 360, 0, 0, 0, 0) ;
-		Cube cube = new Cube( "Micho" + "Cube", name, 0, 0, 0, 0, 0, 0, 5, 5, 5);
+		
+		Geometry cube = new Geometry( "Cube", Geometry.Shape.Cube,
+				1, 1, 1,
+				0, 0, 0,
+				2, 2, 2);
+		
+		Geometry teapot = new Geometry( "Teapot", Geometry.Shape.Teapot, 
+				0, 0, 0,
+				0, 0, 0,
+				2, 2, 2);
 		
 		
 		root.add(hinge);
 		
 		root.add(ball);
 		root.add(cube);
+		//root.add(teapot);
+		
+		//hinge.add(teapot);
 		
 		return root;
 	}
