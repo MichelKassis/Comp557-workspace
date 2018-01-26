@@ -20,17 +20,27 @@ public class Cube extends DAGNode {
 	DoubleParameter sz;
 
 	
-	public Cube(String name){
+	public Cube(String name, String shape,
+			double transX, double transY,double transZ, 
+			double rotateX,double rotateY,double rotateZ,
+			double scaleX, double scaleY,double scaleZ ){
 		super(name);
 		dofs.add( tx = new DoubleParameter( name+" tx", 0, -2, 2 ) );		
 		dofs.add( ty = new DoubleParameter( name+" ty", 0, -2, 2 ) );
 		dofs.add( tz = new DoubleParameter( name+" tz", 0, -2, 2 ) );
+		
+		
 		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
 		dofs.add( ry = new DoubleParameter( name+" ry", 0, -180, 180 ) );
 		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
-		dofs.add( sx = new DoubleParameter( name+" sx", 5, 1, 10 ) );		
-		dofs.add( sy = new DoubleParameter( name+" sy", 5, 1, 10 ) );
-		dofs.add( sz = new DoubleParameter( name+" sz", 5, 1, 10 ) );
+		
+		
+		// just did the scale for now, but this way is stupid and inefficent, should i use something other than dofs.add
+		dofs.add( sx = new DoubleParameter( name+" sx", scaleX, scaleX, scaleX ) );		
+		dofs.add( sy = new DoubleParameter( name+" sy", scaleY, scaleY, scaleY ) );
+		dofs.add( sz = new DoubleParameter( name+" sz", scaleZ, scaleZ, scaleZ ) );
+		
+		
 		
 		
 	}
