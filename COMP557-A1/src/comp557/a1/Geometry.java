@@ -9,15 +9,15 @@ public class Geometry extends DAGNode {
 	
 	private Shape shape;
 	
-	DoubleParameter tx;
-	DoubleParameter ty;
-	DoubleParameter tz;
+	double transX;
+	double transY;
+	double transZ;
 	DoubleParameter rx;
 	DoubleParameter ry;
 	DoubleParameter rz;
-	DoubleParameter sx;
-	DoubleParameter sy;
-	DoubleParameter sz;
+	double scaleX;
+	double scaleY;
+	double scaleZ;
 
 	
 	public Geometry(String name, Shape shape,
@@ -25,9 +25,15 @@ public class Geometry extends DAGNode {
 			double rotateX,double rotateY,double rotateZ,
 			double scaleX, double scaleY,double scaleZ ){
 		super(name);
-		dofs.add( tx = new DoubleParameter( name+" tx", 0, -2, 2 ) );		
-		dofs.add( ty = new DoubleParameter( name+" ty", 0, -2, 2 ) );
-		dofs.add( tz = new DoubleParameter( name+" tz", 0, -2, 2 ) );
+//		dofs.add( tx = new DoubleParameter( name+" tx", 0, -2, 2 ) );		
+//		dofs.add( ty = new DoubleParameter( name+" ty", 0, -2, 2 ) );
+//		dofs.add( tz = new DoubleParameter( name+" tz", 0, -2, 2 ) );
+		
+		
+		
+		this.transX = transX ;
+		this.transY = transY ;
+		this.transZ = transZ ;
 		
 		
 		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
@@ -35,10 +41,9 @@ public class Geometry extends DAGNode {
 		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
 		
 		
-		// just did the scale for now, but this way is stupid and inefficent, should i use something other than dofs.add
-		dofs.add( sx = new DoubleParameter( name+" sx", scaleX, scaleX, scaleX ) );		
-		dofs.add( sy = new DoubleParameter( name+" sy", scaleY, scaleY, scaleY ) );
-		dofs.add( sz = new DoubleParameter( name+" sz", scaleZ, scaleZ, scaleZ ) );
+		this.scaleX = scaleX;
+		this.scaleY = scaleY;
+		this.scaleZ = scaleZ;
 		
 		this.shape = shape;
 		
@@ -53,21 +58,27 @@ public class Geometry extends DAGNode {
 		
 		gl.glPushMatrix();
 		
-		gl.glTranslated(tx.getValue(), ty.getValue(), tz.getValue());
+		gl.glTranslated(transX, transY, transZ);
 		gl.glRotated(rx.getValue(), 1, 0, 0);
 		gl.glRotated(ry.getValue(), 0, 1, 0);
 		gl.glRotated(rz.getValue(), 0, 0, 1);
 		
-		gl.glScaled(sx.getValue(), sy.getValue(), sz.getValue());
+		gl.glScaled(scaleX, scaleY, scaleZ);
 		
 		switch(shape) {
 		
 		case Cube:
+			gl.glColor3f(1.0f, 1.0f, 0.5f);
 			glut.glutSolidCube(1);
-		case Sphere:
+			break;
+		case Teapot:
+			gl.glColor3f(0.3f, 1.0f, 1.0f);
 			glut.glutSolidTeapot(1);
-			
-		
+			break;
+		case Sphere:
+			gl.glColor3f(1.0f, 0.3f, 1.0f);
+			glut.glutSolidSphere(1, 3, 3);
+			break;
 		}
 		
 		super.display(drawable);

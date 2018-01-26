@@ -6,10 +6,8 @@ import com.jogamp.opengl.GLAutoDrawable;
 import mintools.parameters.DoubleParameter;
 
 public class HingeJoint extends DAGNode {
-
-	DoubleParameter rx;
-	DoubleParameter ry;
-	DoubleParameter rz;
+	
+	DoubleParameter rotationAngle;
 	
 	double xAxis;
 	double yAxis;
@@ -21,13 +19,14 @@ public class HingeJoint extends DAGNode {
 	
 	
 	
-	public HingeJoint(String name, double xAxis, double yAxis, double zAxis,
+	public HingeJoint(String name,
 			double tx, double ty, double tz,
+			double xAxis, double yAxis, double zAxis,
 			double minRotationAngle, double maxRotationAngle
 			) {
 		super(name);
 		
-		dofs.add( rx = new DoubleParameter( name+" rx", 0, minRotationAngle, maxRotationAngle ) );
+		dofs.add( rotationAngle = new DoubleParameter( name+" RotationAngle", 0, minRotationAngle, maxRotationAngle ) );
 		
 		this.xAxis = xAxis;
 		this.yAxis = yAxis;
@@ -45,7 +44,7 @@ public class HingeJoint extends DAGNode {
 		
 		gl.glTranslated(tx, ty, tz);
 	
-		gl.glRotated(rx.getValue(), xAxis, yAxis, zAxis);
+		gl.glRotated(rotationAngle.getValue(), xAxis, yAxis, zAxis);
 		
 		super.display(drawable);
 		

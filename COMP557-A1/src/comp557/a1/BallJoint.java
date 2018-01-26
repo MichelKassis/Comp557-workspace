@@ -11,19 +11,28 @@ public class BallJoint extends DAGNode {
 	DoubleParameter ry;
 	DoubleParameter rz;
 	
+	double xAxis;
+	double yAxis;
+	double zAxis;
+
+	
 	double tx;
 	double ty;
 	double tz;
 	
 	
 	
-	public BallJoint(String name, double tx, double ty, double tz, double xRotation, double yRotation, double zRotation) {
+	public BallJoint(String name, double transformationX, double transformationY, double transformationZ, double xAxis, double yAxis, double zAxis) {
 		super(name);
 		
-		dofs.add( rx = new DoubleParameter( name+" rx", 0, xRotation, xRotation ) );		
-		dofs.add( ry = new DoubleParameter( name+" ry", 0, yRotation, yRotation ) );
-		dofs.add( rz = new DoubleParameter( name+" rz", 0, zRotation, zRotation ) );
+		this.tx=transformationX;
+		this.ty=transformationY;
+		this.tz=transformationZ;
 		
+		this.xAxis = xAxis;
+		this.yAxis = yAxis;
+		this.zAxis = zAxis;
+
 		
 	}
 	
