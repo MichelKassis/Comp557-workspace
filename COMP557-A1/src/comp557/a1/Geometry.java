@@ -9,36 +9,33 @@ public class Geometry extends DAGNode {
 	
 	private Shape shape;
 	
-	double transX;
-	double transY;
-	double transZ;
-	DoubleParameter rx;
-	DoubleParameter ry;
-	DoubleParameter rz;
-	double scaleX;
-	double scaleY;
-	double scaleZ;
+	double transX, transY, transZ;
+	double rotateX, rotateY, rotateZ;
+	double scaleX, scaleY, scaleZ;
+	float red, green, blue;
 
 	
 	public Geometry(String name, Shape shape,
 			double transX, double transY,double transZ, 
 			double rotateX,double rotateY,double rotateZ,
-			double scaleX, double scaleY,double scaleZ ){
+			double scaleX, double scaleY,double scaleZ,
+			float red, float green, float blue){
 		super(name);
 //		dofs.add( tx = new DoubleParameter( name+" tx", 0, -2, 2 ) );		
 //		dofs.add( ty = new DoubleParameter( name+" ty", 0, -2, 2 ) );
 //		dofs.add( tz = new DoubleParameter( name+" tz", 0, -2, 2 ) );
 		
-		
-		
 		this.transX = transX ;
 		this.transY = transY ;
 		this.transZ = transZ ;
 		
+//		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
+//		dofs.add( ry = new DoubleParameter( name+" ry", 0, -180, 180 ) );
+//		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
 		
-		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
-		dofs.add( ry = new DoubleParameter( name+" ry", 0, -180, 180 ) );
-		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
+		this.rotateX = rotateX ;
+		this.transY = transY ;
+		this.transZ = transZ ;
 		
 		
 		this.scaleX = scaleX;
@@ -47,8 +44,9 @@ public class Geometry extends DAGNode {
 		
 		this.shape = shape;
 		
-		
-		
+		this.red = red;
+		this.green = green;
+		this.blue = blue;
 		
 	}
 	
@@ -59,25 +57,24 @@ public class Geometry extends DAGNode {
 		gl.glPushMatrix();
 		
 		gl.glTranslated(transX, transY, transZ);
-		gl.glRotated(rx.getValue(), 1, 0, 0);
-		gl.glRotated(ry.getValue(), 0, 1, 0);
-		gl.glRotated(rz.getValue(), 0, 0, 1);
+		gl.glRotated(rotateX, 1, 0, 0);
+		gl.glRotated(rotateY, 0, 1, 0);
+		gl.glRotated(rotateZ, 0, 0, 1);
 		
 		gl.glScaled(scaleX, scaleY, scaleZ);
+		
+		gl.glColor3f(red, green, blue);
 		
 		switch(shape) {
 		
 		case Cube:
-			gl.glColor3f(1.0f, 1.0f, 0.5f);
 			glut.glutSolidCube(1);
 			break;
 		case Teapot:
-			gl.glColor3f(0.3f, 1.0f, 1.0f);
 			glut.glutSolidTeapot(1);
 			break;
 		case Sphere:
-			gl.glColor3f(1.0f, 0.3f, 1.0f);
-			glut.glutSolidSphere(1, 3, 3);
+			glut.glutSolidSphere (1.0, 50, 50);
 			break;
 		}
 		
