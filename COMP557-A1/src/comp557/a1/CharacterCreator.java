@@ -17,7 +17,7 @@ public class CharacterCreator {
 				
 		FreeJoint root = new FreeJoint("Root");
 		
-		HingeJoint hinge = new HingeJoint("Hinge" , 2, 2, 2, 0, 0, 0, 0, 0);
+		HingeJoint hinge = new HingeJoint("Hinge" , 0, 6, 0, 0, 0, 0, 0, 0);
 		//BallJoint ball = new BallJoint("Ball" , -1, -1, -1, 0, 0, 0) ;
 		
 		Geometry cube = new Geometry( "Cube", Geometry.Shape.Cube,
@@ -44,6 +44,8 @@ public class CharacterCreator {
 				0.7, 2, 0.7,
 				1.0f,1.0f,1.0f);
 		
+		
+		
 		Geometry head = new Geometry( "Cube", Geometry.Shape.Cube,
 				0,6, 0,
 				0, 0, 0,
@@ -62,14 +64,24 @@ public class CharacterCreator {
 				0, 0, 0,
 				0.3, 0.5, 0.2,
 				1.0f,1.0f,1.0f);
-		
-		
-		
+						
 		root.add(torso);
-		root.add(neck);
-		root.add(head);
-		root.add(eye1);
-		root.add(eye2);
+		torso.add(hinge);
+		hinge.add(neck);
+		
+		
+		
+		
+		
+		
+		//torso.add(hinge);
+		//torso.add(head);
+		//head.add(hinge);
+		//hinge.add(hinge);
+		//hinge.add(head);
+//		root.add(head);
+//		root.add(eye1);
+//		root.add(eye2);
 		
 		//root.add(ball);
 		//hinge.add(cube);
