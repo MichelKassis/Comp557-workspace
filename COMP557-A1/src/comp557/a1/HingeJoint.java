@@ -13,24 +13,28 @@ public class HingeJoint extends DAGNode {
 	double yAxis;
 	double zAxis;
 	
-	double tx;
-	double ty;
-	double tz;
+	double transformationX;
+	double transformationY;
+	double transformationZ;
 	
 	
 	
 	public HingeJoint(String name,
-			double tx, double ty, double tz,
+			double transformationX, double transformationY, double transformationZ,
 			double xAxis, double yAxis, double zAxis,
 			double minRotationAngle, double maxRotationAngle
 			) {
 		super(name);
 		
-		dofs.add( rotationAngle = new DoubleParameter( name+" RotationAngle", 0, minRotationAngle, maxRotationAngle ) );
+		this.transformationX = transformationX;
+		this.transformationY = transformationY;
+		this.transformationZ = transformationZ;
 		
 		this.xAxis = xAxis;
 		this.yAxis = yAxis;
 		this.zAxis = zAxis;
+		
+		dofs.add( rotationAngle = new DoubleParameter( name+" RotationAngle", 0, minRotationAngle, maxRotationAngle ) );
 		
 		
 		
@@ -42,7 +46,7 @@ public class HingeJoint extends DAGNode {
 		
 		gl.glPushMatrix();
 		
-		gl.glTranslated(tx, ty, tz);
+		gl.glTranslated(transformationX, transformationY, transformationZ);
 	
 		gl.glRotated(rotationAngle.getValue(), xAxis, yAxis, zAxis);
 		

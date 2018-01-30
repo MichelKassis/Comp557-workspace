@@ -6,32 +6,52 @@ import com.jogamp.opengl.GLAutoDrawable;
 import mintools.parameters.DoubleParameter;
 
 public class BallJoint extends DAGNode {
+	
+	DoubleParameter rotationAngleX, rotationAngleY, rotationAngleZ;
 
-	DoubleParameter rx;
-	DoubleParameter ry;
-	DoubleParameter rz;
+	DoubleParameter rotationX, rotationY, rotationZ;
 	
-	double xAxis;
-	double yAxis;
-	double zAxis;
+	double minRotationAngleX, maxRotationAngleX;
+	double minRotationAngleY, maxRotationAngleY;
+	double minRotationAngleZ, maxRotationAngleZ;
 
 	
-	double tx;
-	double ty;
-	double tz;
+	double xAxis, yAxis, zAxis;
+	
+	
+	double transformationX, transformationY, transformationZ;
 	
 	
 	
-	public BallJoint(String name, double transformationX, double transformationY, double transformationZ, double xAxis, double yAxis, double zAxis) {
+	public BallJoint(String name, double transformationX, double transformationY, double transformationZ,
+			double xAxis, double yAxis, double zAxis,
+			double minRotationAngleX, double maxRotationAngleX,
+			double minRotationAngleY, double maxRotationAngleY,
+			double minRotationAngleZ, double maxRotationAngleZ) {
 		super(name);
 		
-		this.tx=transformationX;
-		this.ty=transformationY;
-		this.tz=transformationZ;
+		this.transformationX=transformationX;
+		this.transformationY=transformationY;
+		this.transformationZ=transformationZ;
 		
 		this.xAxis = xAxis;
 		this.yAxis = yAxis;
 		this.zAxis = zAxis;
+		
+		this.minRotationAngleX = minRotationAngleX;
+		this.maxRotationAngleX = maxRotationAngleX;
+		
+		this.minRotationAngleY = minRotationAngleY;
+		this.maxRotationAngleY = maxRotationAngleY;
+		
+		this.minRotationAngleZ = minRotationAngleZ;
+		this.maxRotationAngleZ = maxRotationAngleZ;
+		
+		
+		dofs.add( rotationAngleX = new DoubleParameter( name+" RotationAngle", 0, minRotationAngleX, maxRotationAngleX ) );
+		dofs.add( rotationAngleY = new DoubleParameter( name+" RotationAngle", 0, minRotationAngleY, maxRotationAngleY ) );
+		dofs.add( rotationAngleZ = new DoubleParameter( name+" RotationAngle", 0, minRotationAngleZ, maxRotationAngleZ ) );
+
 
 		
 	}
@@ -42,11 +62,13 @@ public class BallJoint extends DAGNode {
 		
 		gl.glPushMatrix();
 		
-		gl.glTranslated(tx, ty -2, tz);
+		gl.glTranslated(transformationX, transformationY, transformationZ);
 		
-		gl.glRotated(rx.getValue(), 1, 0, 0);
-		gl.glRotated(ry.getValue(), 0, 1, 0);
-		gl.glRotated(rz.getValue(), 0, 0, 1);
+			
+		gl.glRotated(rotationAngleX.getValue(), xAxis, 0 , 0);
+		gl.glRotated(rotationAngleY.getValue(), 0, yAxis , 0);
+		gl.glRotated(rotationAngleZ.getValue(), 0, 0 , zAxis);
+
 		
 		super.display(drawable);
 		
