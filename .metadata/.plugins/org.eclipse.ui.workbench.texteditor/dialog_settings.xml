@@ -8,12 +8,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="mich"/>
+			<item value="teapot"/>
+			<item value="load"/>
+			<item value="axis"/>
 			<item value="pop"/>
 			<item value="push"/>
 			<item value="glutWire"/>
-			<item value="teapot"/>
 			<item value="display"/>
-			<item value="debug"/>
 		</list>
 		<list key="replacehistory">
 		</list>
