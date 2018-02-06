@@ -94,7 +94,7 @@ public class A0App implements GLEventListener {
         gl.glLoadIdentity();
         gl.glRotated( System.nanoTime()*1e-8, 1, 2, 3);
         // Draw something interesting
-        glut.glutWireTeapot(1);
+        glut.glutSolidSphere(1, 50, 50);
     }
 
 	@Override
