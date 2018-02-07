@@ -12,6 +12,7 @@ public class Geometry extends DAGNode {
 	double transX, transY, transZ;
 	double rotateX, rotateY, rotateZ;
 	double scaleX, scaleY, scaleZ;
+	//DoubleParameter scaleX, scaleY, scaleZ;
 	float red, green, blue;
 
 	
@@ -21,17 +22,10 @@ public class Geometry extends DAGNode {
 			double scaleX, double scaleY,double scaleZ,
 			float red, float green, float blue){
 		super(name);
-//		dofs.add( tx = new DoubleParameter( name+" tx", 0, -2, 2 ) );		
-//		dofs.add( ty = new DoubleParameter( name+" ty", 0, -2, 2 ) );
-//		dofs.add( tz = new DoubleParameter( name+" tz", 0, -2, 2 ) );
 		
 		this.transX = transX ;
 		this.transY = transY ;
 		this.transZ = transZ ;
-		
-//		dofs.add( rx = new DoubleParameter( name+" rx", 0, -180, 180 ) );		
-//		dofs.add( ry = new DoubleParameter( name+" ry", 0, -180, 180 ) );
-//		dofs.add( rz = new DoubleParameter( name+" rz", 0, -180, 180 ) );
 		
 		this.rotateX = rotateX ;
 		this.transY = transY ;
@@ -71,11 +65,15 @@ public class Geometry extends DAGNode {
 			glut.glutSolidCube(1);
 			break;
 		case Teapot:
-			glut.glutSolidTeapot(1);
+			glut.glutSolidTeapot(2);
 			break;
 		case Sphere:
-			glut.glutSolidSphere (1.0, 50, 50);
+			glut.glutSolidSphere (1, 50, 50);
 			break;
+		case Cone:
+			glut.glutSolidCone (0.0, 50, 50, 0);
+			break;
+			
 		}
 		
 		super.display(drawable);
@@ -84,6 +82,6 @@ public class Geometry extends DAGNode {
 	
 	}
 	
-	public enum Shape {Cube,Sphere,Teapot}
+	public enum Shape {Cube,Sphere,Teapot, Cone}
 	
 }
