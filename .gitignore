@@ -2,3 +2,12 @@
 *.properties
 *.properties
 *.properties
+/.metadata/
+/.recommenders/
+*.dat
+*.xmi
+*.xml
+.metadata/.log
+*.xml
+*.dat
+.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
