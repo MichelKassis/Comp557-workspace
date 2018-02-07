@@ -11,3 +11,4 @@
 *.xml
 *.dat
 .metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+*.prefs
