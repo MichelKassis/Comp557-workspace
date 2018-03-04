@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="203" key="DIALOG_X_ORIGIN"/>
-		<item value="28" key="DIALOG_Y_ORIGIN"/>
+		<item value="-293" key="DIALOG_X_ORIGIN"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="EditorSelectionDialog">
+		<item value="true" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+		<item value=".fp" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
+		<item value="C:\Program Files\Sublime Text 3\sublime_text.exe" key="EditorSelectionDialog.STORE_ID_DESCR"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="250" key="dialogHeight"/>

@@ -12,12 +12,110 @@
 	<atom:link href="https://www.genuitec.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.genuitec.com</link>
 	<description>The Cloud Control Company</description>
-	<lastBuildDate>Mon, 05 Feb 2018 15:40:48 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 03 Mar 2018 14:31:00 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.9.2</generator>
 	<item>
+		<title>CodeMix &#8211; A Genesis</title>
+		<link>https://www.genuitec.com/codemix-a-genesis/</link>
+		<pubDate>Thu, 01 Mar 2018 15:57:31 +0000</pubDate>
+		<dc:creator><![CDATA[timwebb]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[MyEclipse]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[codemix]]></category>
+		<category><![CDATA[VS code]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=559248</guid>
+		<description><![CDATA[<p>What if we could give Eclipse developers access to the rich catalog of VS Code extensions and advanced development that Code offers? And that’s when CodeMix was born. By providing VS Code smarts inside Eclipse, we no longer have to play catch-up, and our customers can realize the benefits and combined effect Code &#038; Eclipse provide with all the great advances in the technology world.</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/codemix-a-genesis/">CodeMix &#8211; A Genesis</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Angular Observables and Promises &#8211; How to Use Them</title>
+		<link>https://www.genuitec.com/angular-observables-and-promises/</link>
+		<pubDate>Wed, 21 Feb 2018 14:43:29 +0000</pubDate>
+		<dc:creator><![CDATA[dunebook7]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[MyEclipse]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[observables]]></category>
+		<category><![CDATA[promises]]></category>
+		<category><![CDATA[RxJS]]></category>
+		<category><![CDATA[using promises and observables]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=556961</guid>
+		<description><![CDATA[<p>Angular, as we all know, is a JavaScript framework that makes it easy to build web applications. RxJS is really about bringing the principles of functional programming to JavaScript.Functional Programming in JavaScript?It all started with the rise of asynchronicity or asynchronous JavaScript,where we have data that is flowing through our application coming from different sources, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-observables-and-promises/">Angular Observables and Promises &#8211; How to Use Them</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Top Angular Courses &#8211; Our Ten Picks!</title>
+		<link>https://www.genuitec.com/top-angular-courses/</link>
+		<pubDate>Thu, 15 Feb 2018 18:21:33 +0000</pubDate>
+		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[MyEclipse]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[Angular]]></category>
+		<category><![CDATA[angular 2]]></category>
+		<category><![CDATA[Angular 4]]></category>
+		<category><![CDATA[angular 5]]></category>
+		<category><![CDATA[angular courses]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=550821</guid>
+		<description><![CDATA[<p>You just know that frontend development is your cup of tea, but where do you start your adventure? Or perhaps you already have some skills and are wondering how to continue. Today we would like to share our choice of the top Angular courses, going from general, all-inclusive ones to area-specific.Angular &#8211; the Whole ThingAngular [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/top-angular-courses/">Top Angular Courses &#8211; Our Ten Picks!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>2017 CI 11 &#8211; Sprucing up Your IDE</title>
+		<link>https://www.genuitec.com/2017-ci-11-sprucing-up-ide/</link>
+		<pubDate>Tue, 13 Feb 2018 15:57:32 +0000</pubDate>
+		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[2017 CI 11 release]]></category>
+		<category><![CDATA[new release]]></category>
+		<category><![CDATA[software updates]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=550554</guid>
+		<description><![CDATA[<p>2017 is over, but our commitment to improving our products continues, as we bring to you our 2017 CI 11 release. It comes with key fixes and improvements in the TypeScript space, as well as the new two-way theme sharing in DevStyle, among others.NOTE: This release does not include MyEclipse, which will be released shortly.Angular [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/2017-ci-11-sprucing-up-ide/">2017 CI 11 &#8211; Sprucing up Your IDE</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Angular 5 Authentication: Getting Started</title>
+		<link>https://www.genuitec.com/angular-5-authentication/</link>
+		<pubDate>Tue, 06 Feb 2018 15:05:21 +0000</pubDate>
+		<dc:creator><![CDATA[Bob at Genuitec]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[MyEclipse]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[angular and firebase integration]]></category>
+		<category><![CDATA[authentication in Angular 5]]></category>
+		<category><![CDATA[firebase integration]]></category>
+		<category><![CDATA[firestore database]]></category>
+		<category><![CDATA[set up authentication]]></category>
+		<category><![CDATA[set up authentication in Angular 5]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=547349</guid>
+		<description><![CDATA[<p>In this tutorial, we are going to build an Angular 5 authentication system using Google’s Cloud Firestore. Most of the applications we build require some kind of authentication, and the simplest and fastest way to get started with that is by using the Firestore &#8211; a flexible, scalable database for mobile, web and server development. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-5-authentication/">Angular 5 Authentication: Getting Started</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
 		<title>Eclipse — Still the Best IDE!</title>
 		<link>https://www.genuitec.com/eclipse-still-best-ide/</link>
 		<pubDate>Wed, 31 Jan 2018 07:07:38 +0000</pubDate>
@@ -209,100 +307,6 @@
 <p>The post <a rel="nofollow" href="https://www.genuitec.com/devstyle-rebooting-eclipses-ux/">Introducing DevStyle &#8211; Rebooting Eclipse&#8217;s UX</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
 ]]></description>
 		</item>
-		<item>
-		<title>2017 CI 9 &#8211; Decking up for the Holidays with DevStyle and More!</title>
-		<link>https://www.genuitec.com/2017-ci-9-decking-holidays-devstyle/</link>
-		<pubDate>Thu, 30 Nov 2017 16:06:55 +0000</pubDate>
-		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[2017 CI 9 release]]></category>
-		<category><![CDATA[software updates]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=541401</guid>
-		<description><![CDATA[<p>Malls across many countries are not the only places getting decked up for the holidays &#8211; we are getting into a pre-holiday mood ourselves with our latest release. Many improvements are included in our 2017 CI 9 release, both for our MyEclipse users, and for those who prefer Webclipse or Angular IDE. We are happy [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/2017-ci-9-decking-holidays-devstyle/">2017 CI 9 &#8211; Decking up for the Holidays with DevStyle and More!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Gradle vs Maven &#8211; in Search for the Perfect Build Automation Tool</title>
-		<link>https://www.genuitec.com/gradle-vs-maven-search-perfect-build-automation-tool/</link>
-		<pubDate>Fri, 24 Nov 2017 17:54:35 +0000</pubDate>
-		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[gradle]]></category>
-		<category><![CDATA[gradle features]]></category>
-		<category><![CDATA[gradle vs maven]]></category>
-		<category><![CDATA[maven]]></category>
-		<category><![CDATA[maven features]]></category>
-		<category><![CDATA[maven vs gradle]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=543361</guid>
-		<description><![CDATA[<p>In your quest for the perfect build automation tool, you have probably come across Maven and Gradle &#8211; the two big players in the field. The decision here is no less tricky than picking just the right ingredients for that awesome holiday dish you might be thinking about preparing. Of course, each tool has its [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/gradle-vs-maven-search-perfect-build-automation-tool/">Gradle vs Maven &#8211; in Search for the Perfect Build Automation Tool</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>30% off sale, including Angular IDE and more!</title>
-		<link>https://www.genuitec.com/30-off-sale-including-angular-ide/</link>
-		<pubDate>Wed, 22 Nov 2017 19:33:38 +0000</pubDate>
-		<dc:creator><![CDATA[Rocio Trujillo]]></dc:creator>
-				<category><![CDATA[General]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[Promotions]]></category>
-		<category><![CDATA[coupon]]></category>
-		<category><![CDATA[promo]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=543636</guid>
-		<description><![CDATA[<p>Step away from the leftovers and come take advantage of our Cyber Monday sale for Angular IDE, Webclipse, MyEclipse and more!   Thanksgiving is a great time for getting together with family, but perhaps more importantly, it’s about the SALES!  Whether it’s Buen Fin or Cyber Monday, we all love a bargain. Now is the time [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/30-off-sale-including-angular-ide/">30% off sale, including Angular IDE and more!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Improving Java Performance</title>
-		<link>https://www.genuitec.com/improving-java-performance/</link>
-		<pubDate>Fri, 10 Nov 2017 20:28:13 +0000</pubDate>
-		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[Java]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[improve Java performance]]></category>
-		<category><![CDATA[improving Java performance]]></category>
-		<category><![CDATA[Java performance]]></category>
-		<category><![CDATA[Java performance issues]]></category>
-		<category><![CDATA[Java performance problems]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=542225</guid>
-		<description><![CDATA[<p>Java is a fun language to develop in but at scale it can give you headaches. One can run into a number of problems that can affect the way a Java app runs. In this article we&#8217;ll touch on some common areas for performance issues and share some good resources to guide in your Java performance [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/improving-java-performance/">Improving Java Performance</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Create a Cryptocurrency Dashboard with Angular</title>
-		<link>https://www.genuitec.com/create-cryptocurrency-dashboard-angular/</link>
-		<pubDate>Tue, 07 Nov 2017 20:25:08 +0000</pubDate>
-		<dc:creator><![CDATA[Bob at Genuitec]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[create cryptocurrency dashboard]]></category>
-		<category><![CDATA[cryptocurrency dashboard]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=541645</guid>
-		<description><![CDATA[<p>With Bitcoin’s record-breaking surge past the $7000 mark, we thought this would the perfect time to build a cryptocurrency dashboard with Angular. Cryptocurrency is a digital asset designed to work as a medium of exchange, using cryptography to secure the transactions and to control the creation of additional units of the currency. While Bitcoin is [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/create-cryptocurrency-dashboard-angular/">Create a Cryptocurrency Dashboard with Angular</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
 	</channel>
 </rss>
 
@@ -311,7 +315,7 @@ Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/pro
 
 Page Caching using disk: enhanced (SSL caching disabled) 
 Content Delivery Network via resources.cloud.genuitec.com
-Database Caching 136/139 queries in 0.342 seconds using disk
+Database Caching 142/145 queries in 0.017 seconds using disk
 
-Served from: www.genuitec.com @ 2018-02-05 18:08:02 by W3 Total Cache
+Served from: www.genuitec.com @ 2018-03-03 13:40:18 by W3 Total Cache
 -->
