@@ -1,4 +1,6 @@
 // mode 2 - ambient and Lambertian lighting
+//author Michel Kassis 260662779
+
 
 varying vec3 N;  // surface normal in camera 
 varying vec3 v;  // surface fragment location in camera 

@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="comp557.a1.Geometry.Shape"/>
+<fullyQualifiedTypeName name="mintools.viewer.GLU"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="javafx.geometry.Point3D"/>
+<fullyQualifiedTypeName name="comp557.a4.Ray"/>
+<fullyQualifiedTypeName name="javax.vecmath.Vector3d"/>
+<fullyQualifiedTypeName name="comp557.a4.Sphere"/>
+<fullyQualifiedTypeName name="comp557.a4.Intersectable"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.sun.scenario.effect.Color4f"/>
+<fullyQualifiedTypeName name="javax.vecmath.Point2d"/>
+<fullyQualifiedTypeName name="javax.vecmath.Color4f"/>
 </qualifiedTypeNameHistroy>

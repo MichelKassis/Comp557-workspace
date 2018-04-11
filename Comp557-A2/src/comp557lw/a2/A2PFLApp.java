@@ -67,7 +67,7 @@ public class A2PFLApp{
 	BooleanParameter drawFrustum = new BooleanParameter( "draw frustum", false );
 	
 	// TODO: Objective 6: Set the second parameter, default value of sigma, to be as small as possible while avoiding self shadowing
-	DoubleParameter sigma = new DoubleParameter( "sigma", 0, 0, 0.5 );  
+	DoubleParameter sigma = new DoubleParameter( "sigma", 0.0055, 0, 0.5 );  
 	
 	TrackBallCamera tbc = new TrackBallCamera();
 	
@@ -117,7 +117,7 @@ public class A2PFLApp{
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
 
 		// Create the window
-		window = glfwCreateWindow(windowWidth, windowHeight, "Shadow Maps", NULL, NULL);
+		window = glfwCreateWindow(windowWidth, windowHeight, "Shadow Maps - Michel Kassis - 260662779", NULL, NULL);
 		if ( window == NULL )
 			throw new RuntimeException("Failed to create the GLFW window");
 
@@ -325,21 +325,31 @@ public class A2PFLApp{
 		        
 		// TODO: Objective 4: set up the light viewing transformation
 		
-		glMatrixMode( GL_MODELVIEW_MATRIX );
+		glMatrixMode( GL_MODELVIEW );
 		glLoadIdentity();
 		GLU.gluLookAt(lightPosx.getValue(), lightPosy.getValue(), lightPosz.getValue(), 0, 0, 0, 0, 1, 0);
 
 		glGetFloatv( GL_MODELVIEW_MATRIX, LightViewingTransformation.asArray() );        
 		LightViewingTransformation.reconstitute();
 		LightViewingTransformationInverse.getBackingMatrix().invert(LightViewingTransformation.getBackingMatrix());
+		glLoadIdentity();
+
 		
 		
 		// TODO: Objective 5: set up the light projection transformation
 		glMatrixMode( GL_PROJECTION );
 		glLoadIdentity();
+		
+		double farDist = 20;
+		double nearDist = 4;
+		
+		GLU.gluPerspective(lightFOV.getValue(), 1.0, nearDist, farDist);
+		
+		
 		glGetFloatv( GL_PROJECTION_MATRIX, LightProjectionTransformation.asArray() );        
 		LightProjectionTransformation.reconstitute();
 		LightProjectionTransformationInverse.getBackingMatrix().invert(LightProjectionTransformation.getBackingMatrix());
+		glLoadIdentity();
 
 		// TODO: Objective 6: Build the matrix that transforms from camera frame to the light's NDC
 		Matrix4f LPM = lightProjectionMatrix.getBackingMatrix();
@@ -347,9 +357,17 @@ public class A2PFLApp{
 		// you will likewise want to use some of the track ball camera matrices.  See the following
 		// functions, and consider extracing their matrices from the matrix stack in a manner
 		// similar to the above examples.
-		//tbc.applyInverseViewTransformation();
-		//tbc.applyProjectionTransformation();
-		//tbc.applyViewTransformation();
+		
+		glMatrixMode( GL_MODELVIEW );
+		glLoadIdentity();
+		
+		glMultMatrixf(LightProjectionTransformation.asArray());
+		glMultMatrixf(LightViewingTransformation.asArray());
+		tbc.applyInverseViewTransformation();
+		
+		glGetFloatv( GL_MODELVIEW_MATRIX, lightProjectionMatrix.asArray());
+		lightProjectionMatrix.reconstitute();
+		
 		
 		/////////////////////////////////////////////////////////////////////////
 		//
@@ -411,11 +429,14 @@ public class A2PFLApp{
 			// Note the above code draws the light's eye frame, with some ambient 			
 			// light turned on so we can better see it (the fancy axis is otherwise only
 			// lit by the light which is found at its origin.			
+
 			
-			glPushMatrix();
 			// TODO: Objective 5: setup the appropriate matrices to draw the light frustum's NDC
-			// to allow the frustubm to be drawn with a wire cube, and a textured quad to be drawn
+			// to allow the frustum to be drawn with a wire cube, and a textured quad to be drawn
 			// on the near plane (provided the light rendering pass and matrices are correctly set up)
+//			glPushMatrix();
+//			glMatrixMode( GL_PROJECTION );
+			glMultMatrixf(LightProjectionTransformationInverse.asArray());
 			glDisable( GL_LIGHTING );
 			glColor4f( 1, 1, 1, 0.5f );
 			glLineWidth( 3 );     
