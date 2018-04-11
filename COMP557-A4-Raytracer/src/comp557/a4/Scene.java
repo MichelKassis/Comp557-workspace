@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.vecmath.Color3f;
+import javax.vecmath.Color4f;
+import javax.vecmath.Vector3d;
 
 /**
  * Simple scene loader based on XML file format.
@@ -23,6 +25,20 @@ public class Scene {
     /** The ambient light colour */
     public Color3f ambient = new Color3f();
 
+    //Basis vectors are the same for every ray so save them, don't need w, precompute -dw, use d = 1 to make things easier
+  	static Vector3d uBase= new Vector3d();
+  	static Vector3d vBase= new Vector3d();
+  	static Vector3d minusDw= new Vector3d();
+
+  	//Can also precompute left, bottom and right-left and top-bottom
+  	static double left;
+  	static double bottom;
+  	static double rightMinusLeft;
+  	static double topMinusBottom;
+  	
+  	static int n; //n = sqrt(samples) since I sample in an nxn grid
+
+    
     /** 
      * Default constructor.
      */
@@ -41,17 +57,49 @@ public class Scene {
         
         render.init(w, h, showPanel);
         
+        Vector3d W = new Vector3d();
+		W.sub(cam.from , cam.to);
+		W.normalize();
+		uBase.cross(cam.up, W);
+		uBase.normalize();
+		vBase.cross(W, uBase);
+		vBase.normalize();
+		minusDw.scale(-1, W);
+
+		bottom = Math.atan(Math.toRadians(cam.fovy/2));
+		topMinusBottom = -2 * bottom;
+		left = -(cam.imageSize.width * bottom )/ cam.imageSize.height ;
+		rightMinusLeft = -2 * left;
+        
+		n = (int)Math.sqrt(render.samples);
+		Color4f c = new Color4f();
+
         for ( int i = 0; i < h && !render.isDone(); i++ ) {
             for ( int j = 0; j < w && !render.isDone(); j++ ) {
             	
+            	Ray ray = new Ray();
+
+            	
                 // TODO: Objective 1: generate a ray (use the generateRay method)
+            	generateRay(i, j, 0, 0, cam, ray);
+				IntersectResult result = new IntersectResult();
+				for(Intersectable surface : surfaceList){
+					surface.intersect(ray, result);
+					
+					if ( i == w/2 && j == h/2) {
+						int whatever = 3463;
+					}
+					
+					if(result.t   < Double.POSITIVE_INFINITY) {			            	
+					c.set(1, 1, 1, 1);}
+
             	
                 // TODO: Objective 2: test for intersection with scene surfaces
             	
                 // TODO: Objective 3: compute the shaded result for the intersection point (perhaps requiring shadow rays)
                 
             	// Here is an example of how to calculate the pixel value.
-            	Color3f c = new Color3f(render.bgcolor);
+            	//Color3f c = new Color3f(render.bgcolor);
             	int r = (int)(255*c.x);
                 int g = (int)(255*c.y);
                 int b = (int)(255*c.z);
@@ -70,6 +118,11 @@ public class Scene {
         render.waitDone();
         
     }
+    }
+    
+//    static double  u;
+//   	static double v;
+//    
     
     /**
      * Generate a ray through pixel (i,j).
@@ -80,10 +133,16 @@ public class Scene {
      * @param cam The camera.
      * @param ray Contains the generated ray.
      */
-	public static void generateRay(final int i, final int j, final double[] offset, final Camera cam, Ray ray) {
+	public static void generateRay(final int i, final int j, final int p, final int q, final Camera cam, Ray ray) {
 		
 		// TODO: Objective 1: generate rays given the provided parmeters
-		
+		double u = left + rightMinusLeft*(j + (q + 0.5)/n)/cam.imageSize.width;
+		double v = bottom + topMinusBottom*(i + (p + 0.5)/n)/cam.imageSize.height;
+		ray.eyePoint = cam.from;
+		ray.viewDirection.set(minusDw);
+		ray.viewDirection.scaleAdd(u, uBase, ray.viewDirection);
+		ray.viewDirection.scaleAdd(v, vBase, ray.viewDirection);;
+		ray.viewDirection.normalize();
 	}
 
 	/**
