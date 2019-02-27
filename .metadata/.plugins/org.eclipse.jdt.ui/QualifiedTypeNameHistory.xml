@@ -13,4 +13,5 @@
 <fullyQualifiedTypeName name="com.sun.scenario.effect.Color4f"/>
 <fullyQualifiedTypeName name="javax.vecmath.Point2d"/>
 <fullyQualifiedTypeName name="javax.vecmath.Color4f"/>
+<fullyQualifiedTypeName name="javax.vecmath.Point3d"/>
 </qualifiedTypeNameHistroy>
